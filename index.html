@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jos Florist Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div>
+            <a style="margin-left: 1700px" href="{{ route('login') }}">Log in</a>
+            <a href="{{ route('register') }}">Register</a>
+        </div>
+    </div>
+    <div class="header">
+        <div class="logo">
+            <img style="margin-left: 900px; padding-bottom: -200px;" src="image/Jos.webp" alt="Jos Logo">
+        </div>
+    </div>
+    <nav class="nav">
+        <a href="#">Flowers & Plants</a>
+        <a href="#">Personalized Gifts</a>
+        <a href="#">Chocolates & Treats</a>
+        <a href="#">His</a>
+        <a href="#">Hers</a>
+        <a href="#">Gift Hampers</a>
+        <a href="#">Corporate Hampers</a>
+        <a href="#">Get Well Soon Hampers</a>
+        <a href="#">Funeral Arrangements</a>
+        <a href="#">Money Bouquets</a>
+    </nav>
+
+<!-- Deal of the day -->
+        
+<div style="padding-top: 50px">
+    <section style="background-color: #FFC0CB; padding: 50px 0; text-align: center;">
+        <div style="max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <div style="flex: 1; padding: 70px; text-align: left;">
+                <h2 style="color: #8B0000; font-size: 40px; margin-bottom: 10px;">Deal of the Day</h2>
+                <p style="font-size: 18px; color: #6A0DAD;">Don't miss out on our exclusive offer! Limited time only.</p>
+                
+                <div id="countdown" style="font-size: 24px; font-weight: bold; color: #8B0000; margin: 15px 0;"></div>
+                
+                <button style="background-color: #6A0DAD; color: white; border: none; padding: 15px 30px; font-size: 18px; cursor: pointer; border-radius: 5px;">Shop Now</button>
+            </div>
+            <div style="flex: 1; text-align: right;">
+                <img height="300px" src="image/jos.png" alt="Deal of the Day" style="max-width: 100%; border-radius: 10px;">
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function startCountdown(duration) {
+        let timer = duration, hours, minutes, seconds;
+        setInterval(function () {
+            hours = Math.floor(timer / 3600);
+            minutes = Math.floor((timer % 3600) / 60);
+            seconds = timer % 60;
+
+            document.getElementById('countdown').innerHTML = `Time Left: ${hours}h ${minutes}m ${seconds}s`;
+
+            if (--timer < 0) {
+                document.getElementById('countdown').innerHTML = "Deal Expired!";
+            }
+        }, 1000);
+    }
+
+    // Start countdown
+    let dealDuration = 5 * 60 * 60; // 5 hours in seconds
+    startCountdown(dealDuration);
+});
+</script>
+
+
+    <!-- Categories -->
+
+    <div style="padding: 150px 0; text-align: center; background-color: #f8f8f8;">
+    <h2 style="color: #6A0DAD; font-size: 40px; margin-bottom: 30px; margin-top: -50px">Categories</h2>
+    
+    <div class="category-wrapper">
+        <div class="see-more-container">
+            <button id="next-btn">▶</button>
+        </div>
+        
+        <div id="category-container">
+            <div class="category-item"><img src="image/plants.png" alt="Flowers & Plants"><p>Flowers & Plants</p></div>
+            <div class="category-item"><img src="image/plants.png" alt="Personalized Gifts"><p>Personalized Gifts</p></div>
+            <div class="category-item"><img src="image/plants.png" alt="Chocolates & Treats"><p>Chocolates & Treats</p></div>
+            <div class="category-item"><img src="image/plants.png" alt="His"><p>His</p></div>
+            <div class="category-item"><img src="image/plants.png" alt="Hers"><p>Hers</p></div>
+            <div class="category-item"><img src="image/plants.png" alt="Gift Hampers"><p>Gift Hampers</p></div>
+            <div class="category-item"><img src="image/plants.png" alt="Corporate Hampers"><p>Corporate Hampers</p></div>
+            <div class="category-item"><img src="image/plants.png" alt="Get Well Soon Hampers"><p>Get Well Soon Hampers</p></div>
+            <div class="category-item"><img src="image/plants.png" alt="Funeral Arrangements"><p>Funeral Arrangements</p></div>
+            <div class="category-item"><img src="image/plants.png" alt="Money Bouquets"><p>Money Bouquets</p></div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let scrollAmountCategories = 0;
+    const categoryContainer = document.getElementById("category-container");
+    const nextCategoryBtn = document.getElementById("next-btn");
+    const step = 250; 
+
+    nextCategoryBtn.addEventListener("click", () => {
+        let maxScroll = categoryContainer.scrollWidth - categoryContainer.parentElement.clientWidth;
+
+        if (scrollAmountCategories < maxScroll) {
+            scrollAmountCategories += step;
+        } else {
+            scrollAmountCategories = 0;
+        }
+
+        categoryContainer.style.transform = `translateX(-${scrollAmountCategories}px)`;
+        categoryContainer.scrollLeft += step;
+    });
+});
+</script>
+
+
+<!-- Products -->
+<div class="products-section">
+    <h2 class="section-title">Featured Products</h2>
+    <div class="products-grid">
+        <div class="product-item">
+            <img src="image/hers.png" alt="Whole Wheat Sandwich Bread">
+            <p class="product-name">Whole Wheat Sandwich Bread</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (222)</div>
+            <p class="price"><span class="old-price">$24.00</span> <span class="new-price">$18.00</span> <span class="discount">10% OFF</span></p>
+        </div>
+        <div class="product-item">
+            <img src="image/hers.png" alt="Whole Grain Oatmeal">
+            <p class="product-name">Whole Grain Oatmeal</p>
+            <div class="rating">⭐⭐⭐⭐ (41)</div>
+            <p class="price"><span class="old-price">$54.00</span> <span class="new-price">$50.00</span> <span class="discount">10% OFF</span></p>
+        </div>
+        <div class="product-item">
+            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
+            <p class="product-name">Sharp Cheddar Cheese Block</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
+            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
+        </div>
+        <div class="product-item">
+            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
+            <p class="product-name">Sharp Cheddar Cheese Block</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
+            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
+        </div>
+        <div class="product-item">
+            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
+            <p class="product-name">Sharp Cheddar Cheese Block</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
+            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
+        </div>
+        <div class="product-item">
+            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
+            <p class="product-name">Sharp Cheddar Cheese Block</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
+            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
+        </div>
+        <div class="product-item">
+            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
+            <p class="product-name">Sharp Cheddar Cheese Block</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
+            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
+        </div>
+        <div class="product-item">
+            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
+            <p class="product-name">Sharp Cheddar Cheese Block</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
+            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
+        </div>
+        <div class="product-item">
+            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
+            <p class="product-name">Sharp Cheddar Cheese Block</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
+            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
+        </div>
+        <div class="product-item">
+            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
+            <p class="product-name">Sharp Cheddar Cheese Block</p>
+            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
+            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
+        </div>
+        <!-- More products here -->
+    </div>
+    <button class="see-more">See More</button>
+</div>
+
+<!-- Best Seller -->
+
+<div style="padding-top: 50px">
+    <section style="padding: 50px 0; text-align: center;">
+        <div style="max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+            <div style="flex: 1; text-align: left; padding: 70px;">
+                <h2 style="font-size: 40px; margin-bottom: 10px; padding-bottom: 20px;">Best Seller</h2>
+                <h3 style="font-size: 28px;">The Ultimate Bliss Hamper</h3>
+                <h5 style="font-size: 30px;">Price: Ksh 3,200</h5>
+                <p style="font-size: 18px; padding-bottom: 50px;">
+                    Make every moment extra special with our <strong>Ultimate Bliss Hamper!</strong>  
+                    Designed for those who appreciate the finer things in life, this premium selection brings together elegance, flavor, and heartfelt sentiment.  
+                    Whether you're celebrating a milestone, expressing gratitude, or simply spoiling a loved one, this best-selling hamper is a customer favorite for a reason!
+                </p>
+                
+                <h4 style="font-size: 28px">What's Inside?</h4>
+                <ul style="text-align: left; font-size: 18px; padding-left: 20px;">
+                  <li><strong>⭐ Lavender Bliss Bouquet</strong> - A breathtaking arrangement of pink and purple blooms for timeless beauty.</li>
+                  <li><strong>⭐ Decadent Red Velvet Cake (1kg)</strong> - Moist, rich, and irresistibly delicious.</li>
+                  <li style="padding-bottom: 50px;"><strong>⭐ Luxury Greeting Card</strong> - A charming card to send your warmest wishes.</li>
+                </ul>
+
+
+                <p style="font-size: 28px;"><strong>Allergens:</strong> Contains gluten, dairy, and eggs.</p>
+
+                <p style="font-size: 18px;  padding-bottom: 40px; color: blue">📍 Available in Nairobi, Kiambu, and Kajiado 🚚</p>
+
+                <button style="background-color: #6A0DAD; color: white; border: none; padding: 15px 30px; font-size: 18px; cursor: pointer; border-radius: 5px;">
+                    Shop Now
+                </button>
+            </div>
+            
+            <!-- Image with Purple Background -->
+            <div style="flex: 1; text-align: right; padding: 50px; border-radius: 10px; padding-left: 100px">
+                <img height="700px" width="700px" src="image/jos2.png" alt="Best Seller" style="max-width: 100%; border-radius: 10px;">
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Testimonials -->
+
+<section class="max-w-6xl mx-auto py-12 px-6">
+        <h2 class="text-3xl font-bold text-gray-900">What our customers say</h2>
+        <div class="flex items-center gap-4 mt-3">
+            <div class="flex text-pink-500 text-xl">
+                &#9733; &#9733; &#9733; &#9733; &#9733;
+            </div>
+            <span class="text-gray-600">5961 Reviews</span>
+        </div>
+
+        <div class="relative mt-6">
+            <button class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-pink-500 text-white p-3 rounded-full shadow-md">
+                &#10094;
+            </button>
+
+            <div class="flex overflow-x-auto gap-6 scrollbar-hide">
+                <div class="bg-white shadow-lg rounded-lg p-6 min-w-[300px]">
+                    <div class="flex text-pink-500 text-lg">
+                        &#9733; &#9733; &#9733; &#9733; &#9733;
+                    </div>
+                    <p class="font-bold mt-2">Pure Greatness</p>
+                    <p class="text-gray-700">Great customer service, exceptional delivery experience as usual.</p>
+                    <p class="text-gray-500 mt-2">- Ali Emir Kose</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6 min-w-[300px]">
+                    <div class="flex text-pink-500 text-lg">
+                        &#9733; &#9733; &#9733; &#9733; &#9733;
+                    </div>
+                    <p class="font-bold mt-2">Great Hand Lotion</p>
+                    <p class="text-gray-700">It has a beautiful scent and most of my friends have bought it. Unfortunately, it's largely out of stock. Thank you.</p>
+                    <p class="text-gray-500 mt-2">- Ruth Makuthu</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6 min-w-[300px]">
+                    <div class="flex text-pink-500 text-lg">
+                        &#9733; &#9733; &#9733; &#9733; &#9733;
+                    </div>
+                    <p class="font-bold mt-2">Amazing Packaging</p>
+                    <p class="text-gray-700">It's really well packaged! I like how the smell permeates into the house.</p>
+                    <p class="text-gray-500 mt-2">- Yvonne Wangithi</p>
+                </div>
+            </div>
+
+            <button class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-pink-500 text-white p-3 rounded-full shadow-md">
+                &#10095;
+            </button>
+        </div>
+    </section>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- footer -->
+
+<footer class="footer">
+        <div class="footer-section map-container">
+            <h3>Our Location</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.186920576527!2d36.806528!3d-1.286389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d4e10e4df1%3A0x6f8c909f2873e4b2!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1615650123456" allowfullscreen=""></iframe>
+        </div>
+        <div class="footer-section">
+            <h3>Business Time</h3>
+            <p>Monday - Friday: 08.00am to 05.00pm</p>
+            <p>Saturday: 10.00am to 08.00pm</p>
+            <p>Sunday: Closed</p>
+        </div>
+        <div class="footer-section newsletter">
+            <h3>Newsletter</h3>
+            <input type="email" placeholder="Email Address">
+            <button>Submit</button>
+        </div>
+        <div class="footer-section">
+            <h3>Social Media</h3>
+            <div class="social-links">
+                <a href="#">TikTok</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p>Address: Nairobi, Kenya</p>
+            <p>Phone: +254 700 000000</p>
+            <p>Email: contact@yourwebsite.com</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Chat Button -->
+<a href="https://wa.me/254700000000" target="_blank" class="whatsapp-button">
+    <img src="image/whatsapp.png" alt="Chat with us">
+</a>
+
+
+</body>
+</html>
