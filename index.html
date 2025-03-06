@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Jos Florist Shop</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -343,23 +345,27 @@
         "Same-Day Delivery Available! 🚀",
         "Order Now! Call or WhatsApp: 0743 521 566 📞"
     ];
-    
+
     let index = 0;
     const flashingText = document.getElementById("flashingText");
 
     function changeText() {
-        flashingText.innerText = texts[index];
-        flashingText.style.opacity = 1; // Show text
-        setTimeout(() => {
-            flashingText.style.opacity = 0; // Hide text before switching
-        }, 4000); // Fade out after 4 seconds
+        flashingText.style.transition = "opacity 0.5s ease-out"; 
+        flashingText.style.opacity = 0; 
 
-        index = (index + 1) % texts.length;
+        setTimeout(() => {
+            index = (index + 1) % texts.length;
+            flashingText.innerText = texts[index]; 
+            flashingText.style.transition = "opacity 0.5s ease-in"; 
+            flashingText.style.opacity = 1; 
+        }, 0); 
     }
 
     setInterval(changeText, 5000); // Change text every 5 seconds
     changeText(); // Run once immediately
 });
+
+
 
         </script>
     </div>
@@ -367,7 +373,7 @@
     
 
 <!-- Deal of the day -->
-        
+
 <div style="padding-top: 20px">
     <section style="display: flex; height: 100%; min-height: 600px; width: 100%;">
         <!-- Left Section (Image) -->
@@ -377,15 +383,16 @@
 
         <!-- Right Section (Text & Button) -->
         <div style="flex: 2; background-color: #FF69B4; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 100px; text-align: left;">
-            <h2 style="font-size: 36px; font-weight: bold; margin-bottom: 10px; text-shadow: 2px 2px 5px rgba(0,0,0,0.2);">Deal of the Day</h2>
-            <p style="font-size: 16px; font-weight: bold;">Don't miss out on our exclusive offer! Limited time only.</p>
+            <h2 style="font-size: 56px; font-weight: bold; margin-bottom: 10px; text-shadow: 2px 2px 5px rgba(0,0,0,0.2);">Deal of the Day</h2>
+            <p style="font-size: 30px; font-family: 'Sofia', sans-serif; font-weight: bold;">Don't miss out on our exclusive offer! Limited time only.</p>
             
-            <div id="countdown" style="font-size: 20px; font-weight: bold; margin: 15px 0;"></div>
+            <div id="countdown" style="font-size: 30px; font-weight: bold; margin: 15px 0;"></div>
             
-            <button style="background-color: #FFD166; color: black; border: none; padding: 15px 30px; font-size: 18px; cursor: pointer; border-radius: 8px; font-weight: bold; transition: 0.3s; box-shadow: 0px 4px 8px rgba(0,0,0,0.2);">Grab the Deal Now!</button>
+            <button style="background-color: #FFD166; color: black; border: none; padding: 15px 30px; font-size: 28px; cursor: pointer; border-radius: 8px; font-weight: bold; transition: 0.3s; box-shadow: 0px 4px 8px rgba(0,0,0,0.2);">Grab the Deal Now!</button>
         </div>
     </section>
 </div>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -409,9 +416,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+
+
 <!-- Products -->
 <div class="products-section">
-    <h2 class="section-title">Featured Products</h2>
+    <h2 class="section-title">Seasonal Offers</h2>
     <div class="products-grid">
         <div class="product-item">
             <img src="image/hers.png" alt="Whole Wheat Sandwich Bread">
