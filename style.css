@@ -351,6 +351,47 @@ color: white;
     background: #4B0082;
     }
 
+    /* Style for image container */
+
+    .image-container {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+    
+    .image-container img {
+        width: 100%;
+        display: block;
+        border-radius: 8px;
+    }
+    
+    /* Style for the personalize button */
+    .personalize-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 105, 180, 0.9); /* Light pink button */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.3s ease-in-out;
+    }
+    
+    /* Show button on hover */
+    .image-container:hover .personalize-btn {
+        opacity: 1;
+    }
+    
+    .personalize-btn:hover {
+        background-color: rgba(255, 20, 147, 0.9); /* Slightly darker pink */
+    }
+
 /* best seller */
 
 .best-seller-section {
