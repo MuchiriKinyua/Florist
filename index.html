@@ -14,12 +14,6 @@
 <!-- header -->
 
 <div class="flashing-text" id="flashingText"></div>
-        <div class="top-bar">
-            <div>
-                <a style="margin-left: 1700px" href="{{ route('login') }}">Log in</a>
-                <a href="{{ route('register') }}">Register</a>
-            </div>
-        </div>
         <div class="header">
     <div class="logo-container">
         <img src="image/jos fit.jpeg" alt="Jos Logo">
@@ -33,7 +27,7 @@
     <div class="cart-container">
         <div class="cart-account">
             <button class="cart-btn"><i class="fas fa-shopping-cart"></i></button>
-            <button class="account-btn">Account</button>
+            <a href="{{ route('login') }}" class="account-btn">Account</a>
         </div>
     </div>
 </div>
@@ -375,10 +369,10 @@
 <!-- Deal of the day -->
 
 <div style="padding-top: 20px">
-    <section style="display: flex; height: 100%; min-height: 600px; width: 100%;">
+    <section style="display: flex; height: 100%; min-height: 720px; width: 100%;">
         <!-- Left Section (Image) -->
         <div style="flex: 2; background-color: #f5f5dc; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-            <img src="image/jos.png" alt="Deal of the Day" style="height: 600px; width: 900px; max-width: none; object-fit: cover; border-radius: 0;">
+            <img src="image/jos.png" alt="Deal of the Day" style="height: 720px; width: 900px; max-width: none; object-fit: cover; border-radius: 0;">
         </div>
 
         <!-- Right Section (Text & Button) -->
@@ -416,76 +410,82 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<!-- Deal of the Month -->
+
+<div style="padding-top: 20px; background-color: purple; padding-bottom: 50px;">
+    <section style="width: 100%; text-align: center; padding: 50px 20px;">
+        
+        <!-- Deal of the Month Heading -->
+        <h2 style="font-size: 60px; font-weight: bold; color: #FF69B4; text-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+            🌸 Deal of the Month 🌸
+        </h2>
+
+        <!-- Floral Image -->
+        <div style="display: flex; justify-content: center; margin: 20px 0;">
+            <img src="image/plants.png" alt="Florist Deal" 
+            style="height: 400px; width: 500px; border-radius: 15px; box-shadow: 0px 4px 10px rgba(0,0,0,0.2);">
+        </div>
 
 
-<!-- Products -->
-<div class="products-section">
-    <h2 class="section-title">Seasonal Offers</h2>
-    <div class="products-grid">
-        <div class="product-item">
-            <img src="image/hers.png" alt="Whole Wheat Sandwich Bread">
-            <p class="product-name">Whole Wheat Sandwich Bread</p>
-            <div class="rating">⭐⭐⭐⭐⭐ (222)</div>
-            <p class="price"><span class="old-price">$24.00</span> <span class="new-price">$18.00</span> <span class="discount">10% OFF</span></p>
+        <!-- Offer Description -->
+        <p style="font-size: 28px; font-family: 'Sofia', sans-serif; font-weight: bold; color: #333; margin-bottom: 20px;">
+            Get **50% OFF** on our exclusive floral bouquets! Perfect for special occasions.  
+            **Limited Time Offer – Don't Miss Out!**  
+        </p>
+
+        <!-- Countdown Timer -->
+        <div id="countdown" style="font-size: 30px; font-weight: bold; color: #FF69B4; margin-bottom: 20px;">
+            Offer ends in: <span id="timer"></span>
         </div>
-        <div class="product-item">
-            <img src="image/hers.png" alt="Whole Grain Oatmeal">
-            <p class="product-name">Whole Grain Oatmeal</p>
-            <div class="rating">⭐⭐⭐⭐ (41)</div>
-            <p class="price"><span class="old-price">$54.00</span> <span class="new-price">$50.00</span> <span class="discount">10% OFF</span></p>
-        </div>
-        <div class="product-item">
-            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
-            <p class="product-name">Sharp Cheddar Cheese Block</p>
-            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
-            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
-        </div>
-        <div class="product-item">
-            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
-            <p class="product-name">Sharp Cheddar Cheese Block</p>
-            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
-            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
-        </div>
-        <div class="product-item">
-            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
-            <p class="product-name">Sharp Cheddar Cheese Block</p>
-            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
-            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
-        </div>
-        <div class="product-item">
-            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
-            <p class="product-name">Sharp Cheddar Cheese Block</p>
-            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
-            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
-        </div>
-        <div class="product-item">
-            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
-            <p class="product-name">Sharp Cheddar Cheese Block</p>
-            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
-            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
-        </div>
-        <div class="product-item">
-            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
-            <p class="product-name">Sharp Cheddar Cheese Block</p>
-            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
-            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
-        </div>
-        <div class="product-item">
-            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
-            <p class="product-name">Sharp Cheddar Cheese Block</p>
-            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
-            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
-        </div>
-        <div class="product-item">
-            <img src="image/hers.png" alt="Sharp Cheddar Cheese Block">
-            <p class="product-name">Sharp Cheddar Cheese Block</p>
-            <div class="rating">⭐⭐⭐⭐⭐ (32)</div>
-            <p class="price"><span class="old-price">$14.00</span> <span class="new-price">$12.00</span> <span class="discount">10% OFF</span></p>
-        </div>
-        <!-- More products here -->
-    </div>
-    <button class="see-more">See More</button>
+
+        <!-- CTA Button -->
+        <button style="
+            background-color: #FF69B4; 
+            color: white; 
+            border: none; 
+            padding: 15px 40px; 
+            font-size: 28px; 
+            cursor: pointer; 
+            border-radius: 12px; 
+            font-weight: bold; 
+            transition: 0.3s ease-in-out;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+        " 
+        onmouseover="this.style.backgroundColor='#D1478B';" 
+        onmouseout="this.style.backgroundColor='#FF69B4';">
+            🌷 Grab Your Deal Now!
+        </button>
+
+    </section>
 </div>
+
+<!-- Countdown Timer Script -->
+<script>
+    function startCountdown(durationInSeconds) {
+        let timerDisplay = document.getElementById("timer");
+        let countdown = durationInSeconds;
+
+        function updateTimer() {
+            let days = Math.floor(countdown / (24 * 60 * 60));
+            let hours = Math.floor((countdown % (24 * 60 * 60)) / (60 * 60));
+            let minutes = Math.floor((countdown % (60 * 60)) / 60);
+            let seconds = countdown % 60;
+
+            timerDisplay.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            if (countdown > 0) {
+                countdown--;
+                setTimeout(updateTimer, 1000);
+            } else {
+                timerDisplay.innerHTML = "Offer Expired!";
+            }
+        }
+
+        updateTimer();
+    }
+
+    startCountdown(7 * 24 * 60 * 60); // Set countdown for 7 days
+</script>
 
 <!-- Best Seller -->
 <div class="best-seller-section">
