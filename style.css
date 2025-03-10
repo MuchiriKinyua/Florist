@@ -218,6 +218,51 @@ display: block;
     display: flex;
     }
 
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px;
+    }
+    .section-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .view-all {
+        float: right;
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+    }
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .product-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        background: white;
+        padding: 10px;
+    }
+    .product-card img {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+    }
+    .product-title {
+        font-size: 16px;
+        margin: 10px 0;
+    }
+    .product-price {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+    }
+
 /* Featured products */
 
 #f8f8f8
