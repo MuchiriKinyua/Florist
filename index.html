@@ -377,7 +377,7 @@
 
         <!-- Right Section (Text & Button) -->
         <div style="flex: 2; background-color: #FF69B4; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 100px; text-align: left;">
-            <h2 style="font-size: 56px; font-weight: bold; margin-bottom: 10px; text-shadow: 2px 2px 5px rgba(0,0,0,0.2);">Deal of the Day</h2>
+            <h2 style="font-size: 56px; font-weight: bold; margin-bottom: 10px; text-shadow: 2px 2px 5px rgba(0,0,0,0.2);">Floral treasure of the day</h2>
             <p style="font-size: 30px; font-family: 'Sofia', sans-serif; font-weight: bold;">Don't miss out on our exclusive offer! Limited time only.</p>
             
             <div id="countdown" style="font-size: 30px; font-weight: bold; margin: 15px 0;"></div>
@@ -411,83 +411,80 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <!-- Deal of the Month -->
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; background-color: purple; padding: 200px; color: white;">
 
-<div style="padding-top: 20px; background-color: purple; padding-bottom: 50px;">
-    <section style="width: 100%; text-align: center; padding: 50px 20px;">
+    <!-- Left Section: Text Content -->
+    <div style="flex: 1; max-width: 50%; padding-right: 40px;">
         
         <!-- Deal of the Month Heading -->
-        <h2 style="font-size: 60px; font-weight: bold; color: #FF69B4; text-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+        <h2 style="font-size: 50px; font-weight: bold; color: #FF69B4; text-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
             🌸 Birthday Bloom Box 🌸
         </h2>
 
-        <!-- Floral Image -->
-        <div style="display: flex; justify-content: center; margin: 20px 0;">
-            <img src="image/plants.png" alt="Florist Deal" 
-            style="height: 400px; width: 500px; border-radius: 15px; box-shadow: 0px 4px 10px rgba(216, 14, 132, 0.2);">
-        </div>
-
-
-        <!-- Offer Description -->
-        <p style="font-size: 28px; font-family: 'Sofia', sans-serif; font-weight: bold; color: #FF69B4; margin-bottom: 20px;">
-            <span style="color: #FF69B4;"> <b>Get 50% OFF</b> </span> on our exclusive floral bouquets! Perfect for special occasions.  
-            <br>
-            <span style="color: #FF69B4;"><b>Limited Time Offer – Don't Miss Out!</b></span>
+        <!-- Price -->
+        <p style="font-size: 28px; font-weight: bold; margin-bottom: 10px;">
+            Price: <span style="color: #FFD700;">KSh 5,950.00</span>
         </p>
 
+<!-- Offer Description -->
+<p style="font-size: 22px; font-family: 'Sofia', sans-serif; color: white; margin-bottom: 20px;">
+    The Birthday Bloom Box is a celebration bundle perfect for making any special occasion truly unforgettable.  
+    This exquisite package includes the stunning <b>Golden Bliss Yellow Roses Flower Bouquet</b>, a radiant arrangement of  
+    fresh, hand-picked yellow roses symbolizing joy, friendship, and warmth. Brighten someone’s day with this delightful combination  
+    of flowers and sweetness!  
+</p>
+<p style="font-size: 22px; font-family: 'Sofia', sans-serif; color: white; margin-bottom: 20px;">
+Brighten someone’s day with this delightful combination 
+</p>
+        <!-- Delivery Info -->
+        <p style="font-size: 18px; margin-bottom: 20px;">
+            🚚 Available only in <b>Nairobi & Environs, Nakuru, Naivasha, Eldoret, Kericho & Kisumu</b> 🚚
+        </p>
 
-        <!-- Countdown Timer -->
-        <div id="countdown" style="font-size: 30px; font-weight: bold; color: #FF69B4; margin-bottom: 20px;">
-            Offer ends in: <span id="timer"></span>
-        </div>
+        <!-- Form for choosing delivery location -->
+        <label for="location" style="font-size: 18px; font-weight: bold;">Choose delivery location</label>
+        <select id="location" style="width: 100%; padding: 10px; margin-top: 5px; font-size: 16px; border-radius: 5px; border: none;">
+            <option>Nairobi</option>
+            <option>Nakuru</option>
+            <option>Naivasha</option>
+            <option>Eldoret</option>
+            <option>Kericho</option>
+            <option>Kisumu</option>
+        </select>
 
+        <!-- Message on cake input -->
+        <label for="message" style="font-size: 18px; font-weight: bold; display: block; margin-top: 15px;">Message to appear on cake</label>
+        <input type="text" id="message" placeholder="Enjoy your day" 
+            style="width: 100%; padding: 10px; font-size: 16px; border-radius: 5px; border: none; margin-top: 5px;">
+        
         <!-- CTA Button -->
         <button style="
             background-color: #FF69B4; 
             color: white; 
             border: none; 
             padding: 15px 40px; 
-            font-size: 28px; 
+            font-size: 22px; 
             cursor: pointer; 
             border-radius: 12px; 
             font-weight: bold; 
             transition: 0.3s ease-in-out;
             box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            margin-top: 20px;
         " 
         onmouseover="this.style.backgroundColor='#D1478B';" 
         onmouseout="this.style.backgroundColor='#FF69B4';">
-            🌷 Grab Your Deal Now!
+            🌷 Add to Cart
         </button>
 
-    </section>
+    </div>
+
+    <!-- Right Section: Image -->
+    <div style="flex: 1; max-width: 50%; text-align: center;">
+        <img src="image/plants.png" alt="Florist Deal" 
+            style="height: 700px; width: 700px; border-radius: 15px; box-shadow: 0px 4px 10px rgba(216, 14, 132, 0.2);">
+    </div>
+
 </div>
-
-<!-- Countdown Timer Script -->
-<script>
-    function startCountdown(durationInSeconds) {
-        let timerDisplay = document.getElementById("timer");
-        let countdown = durationInSeconds;
-
-        function updateTimer() {
-            let days = Math.floor(countdown / (24 * 60 * 60));
-            let hours = Math.floor((countdown % (24 * 60 * 60)) / (60 * 60));
-            let minutes = Math.floor((countdown % (60 * 60)) / 60);
-            let seconds = countdown % 60;
-
-            timerDisplay.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-            if (countdown > 0) {
-                countdown--;
-                setTimeout(updateTimer, 1000);
-            } else {
-                timerDisplay.innerHTML = "Offer Expired!";
-            }
-        }
-
-        updateTimer();
-    }
-
-    startCountdown(7 * 24 * 60 * 60); // Set countdown for 7 days
-</script>
 
 <!-- Best Seller -->
 <div class="best-seller-section">
@@ -523,6 +520,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
     </section>
 </div>
+
 
 
 <!-- Testimonials -->
