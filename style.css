@@ -390,7 +390,7 @@ color: white;
 .best-seller-section {
 background: #ADD8E6; 
 color: black; 
-padding: 60px 0;
+padding: 10px 0;
 }
 
 .best-seller-content {
@@ -452,6 +452,7 @@ padding: 50px;
 max-width: 100%;
 border-radius: 10px;
 height: auto;
+margin-bottom: 200px;
 }
 
 /* Why Jo's */
@@ -499,7 +500,7 @@ height: auto;
 /* testimonials */
 
 .testimonials-section {
-background: purple;
+background: #CBC3E3;
 width: 100%;
 padding: 60px 0;
 color: black;
